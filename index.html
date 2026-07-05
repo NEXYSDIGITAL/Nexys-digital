@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEXYS DIGITAL // Premium Portfolio Node</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ==========================================
+         BACKGROUND LAYER (VIDEO / IMAGE ENGINE)
+         ========================================== -->
+    <div class="media-canvas-layer">
+        <!-- BACKGROUND VIDEO: Will display automatically if the file exists -->
+        <video autoplay muted loop playsinline class="bg-video-asset">
+            <source src="videos/hero 1.mp4" type="video/mp4">
+        </video>
+        <!-- BACKGROUND IMAGE FALLBACK: Managed via style.css layer -->
+        <div class="bg-image-fallback"></div>
+        <div class="japanese-grain-overlay"></div>
+    </div>
+
+    <!-- ==========================================
+         STICKY NAVIGATION INTERFACE
+         ========================================== -->
+    <nav class="nx-navbar">
+        <div class="container nav-container">
+            <!-- LOGO EDITABLE NODE -->
+            <a href="index.html" class="nx-logo-link">
+                <!-- If you prefer an image logo later: <img src="logo/logo.png" alt="NEXYS" class="logo-img"> -->
+                <span class="logo-text">NEXYS<span class="logo-dot">.</span>DIGITAL</span>
+            </a>
+
+            <!-- MENU INTERFACE LINKS -->
+            <div class="nav-menu-wrapper" id="navMenu">
+                <ul class="nav-links-list">
+                    <li><a href="#home" class="nav-item active">HOME</a></li>
+                    <li><a href="#services" class="nav-item">SERVICES</a></li>
+                    <li><a href="#portfolio" class="nav-item">PORTFOLIO</a></li>
+                    <li><a href="#about" class="nav-item">ABOUT</a></li>
+                    <li><a href="#contact" class="nav-item">CONTACT</a></li>
+                </ul>
+            </div>
+
+            <!-- RIGHT NAVIGATION GLOBAL CONTROL BUTTON -->
+            <div class="nav-actions-wrapper">
+                <!-- BUTTON LINK TARGET -->
+                <a href="https://forms.gle/BoD6sWonpfeW9gXg9" target="_blank" class="btn-anime premium-nav-btn">
+                    <span class="btn-text">START PROJECT</span>
+                </a>
+                
+                <!-- HAMBURGER MENU FOR MOBILE RESPONSIVENESS -->
+                <button class="mobile-toggle-trigger" id="mobileTrigger" aria-label="Toggle Menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ==========================================
+         HERO SECTION (SPLIT LAYOUT CANVAS)
+         ========================================== -->
+    <header id="home" class="hero-canvas">
+        <div class="container hero-grid-wrapper">
+            
+            <!-- LEFT TEXT & ACTION AREA -->
+            <div class="hero-text-block scroll-reveal">
+                <div class="japanese-meta-tag">PREMIUM WEBSITE STUDIO</div>
+                <h1 class="hero-headline">
+                    WE BUILD<br>
+                    DIGITAL<br>
+                    <span class="wireframe-text">PRESENCE.</span>
+                </h1>
+                <p class="hero-description">
+                    High-end custom frameworks, pristine brand systems, SEO blueprints, and automated engine layers designed explicitly for elite market conversion.
+                </p>
+                <div class="hero-button-group">
+                    <!-- HERO PRIMARY BUTTON -->
+                    <a href="https://forms.gle/BoD6sWonpfeW9gXg9" target="_blank" class="btn-anime primary">
+                        <span class="btn-text">START PROJECT</span>
+                    </a>
+                    <!-- HERO SECONDARY BUTTON -->
+                    <a href="#portfolio" class="btn-anime secondary">
+                        <span class="btn-text">OUR WORK</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- RIGHT ANIME ILLUSTRATION FRAME -->
+            <div class="hero-media-block scroll-reveal">
+                <div class="illustration-frame-outer">
+                    <div class="anime-frame-corner top-left"></div>
+                    <div class="anime-frame-corner bottom-right"></div>
+                    <!-- HERO IMAGE LINK -->
+                    <img src="images/hero 2.png" alt="Nexys Digital Artwork Asset" class="hero-scaled-image">
+                    <div class="frame-technical-overlay">SYSTEM_ACTIVE // SCALE_100%</div>
+                </div>
+            </div>
+
+        </div>
+    </header>
+
+    <!-- ==========================================
+         SERVICES SECTION (MONOCHROME GLASS CARDS)
+         ========================================== -->
+    <section id="services" class="services-canvas container section-spacer">
+        <div class="section-header-block scroll-reveal">
+            <span class="section-index">01 //</span>
+            <h2 class="section-title">CAPABILITIES & SERVICES</h2>
+        </div>
+
+        <div class="services-cards-grid">
+            <!-- SERVICE CARD 1 -->
+            <div class="service-card glass-card scroll-reveal">
+                <div class="card-numeric">[ 01 ]</div>
+                <h3 class="card-headline">Website Development</h3>
+                <p class="card-body-text">Clean, blazing fast performance custom application ecosystems optimized for modern platform indices.</p>
+            </div>
+            <!-- SERVICE CARD 2 -->
+            <div class="service-card glass-card scroll-reveal">
+                <div class="card-numeric">[ 02 ]</div>
+                <h3 class="card-headline">Brand Identity</h3>
+                <p class="card-body-text">Pristine visual communication systems, geometry frameworks, typography standards, and modern asset deployment.</p>
+            </div>
+            <!-- SERVICE CARD 3 -->
+            <div class="service-card glass-card scroll-reveal">
+                <div class="card-numeric">[ 03 ]</div>
+                <h3 class="card-headline">SEO Blueprinting</h3>
+                <p class="card-body-text">Semantic system scaling engineered explicitly to index dominant visibility share targets across web networks.</p>
+            </div>
+            <!-- SERVICE CARD 4 -->
+            <div class="service-card glass-card scroll-reveal">
+                <div class="card-numeric">[ 04 ]</div>
+                <h3 class="card-headline">AI Automation</h3>
+                <p class="card-body-text">Intelligent custom database architectures and task triggers built directly inside your corporate operations environment.</p>
+            </div>
+            <!-- SERVICE CARD 5 -->
+            <div class="service-card glass-card scroll-reveal">
+                <div class="card-numeric">[ 05 ]</div>
+                <h3 class="card-headline">System Maintenance</h3>
+                <p class="card-body-text">Proactive performance monitoring, high-priority security patches, and systematic updates to keep operations optimized.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         PORTFOLIO SECTION (PROJECT DISPLAY NODES)
+         ========================================== -->
+    <section id="portfolio" class="portfolio-canvas container section-spacer">
+        <div class="section-header-block scroll-reveal">
+            <span class="section-index">02 // </span>
+            <h2 class="section-title">SELECTED WORK FRAMES</h2>
+        </div>
+
+        <div class="portfolio-showcase-stack">
+            <!-- PORTFOLIO PROJECT 1 -->
+            <div class="portfolio-item scroll-reveal">
+                <div class="project-media-wrapper">
+                    <!-- PROJECT 1 IMAGE LINK -->
+                    <img src="images/alpha system.png" alt="Project Core Alpha Showcase" class="project-img-asset">
+                </div>
+                <div class="project-meta-layer">
+                    <span class="project-tags">WEB APPLICATION // FRAMEWORK DEVELOPMENT</span>
+                    <h3 class="project-name">CORE ALPHA SYSTEM</h3>
+                </div>
+            </div>
+
+            <!-- PORTFOLIO PROJECT 2 -->
+            <div class="portfolio-item scroll-reveal">
+                <div class="project-media-wrapper">
+                    <!-- PROJECT 2 IMAGE LINK -->
+                    <img src="images/mini.png" alt="Project Vector Minimal Identity" class="project-img-asset">
+                </div>
+                <div class="project-meta-layer">
+                    <span class="project-tags">BRAND SYSTEM // VISUAL GEOMETRY</span>
+                    <h3 class="project-name">VECTOR MINIMAL IDENTITY</h3>
+                </div>
+            </div>
+
+            <!-- PORTFOLIO PROJECT 3 -->
+            <div class="portfolio-item scroll-reveal">
+                <div class="project-media-wrapper">
+                    <!-- PROJECT 3 IMAGE LINK -->
+                    <img src="images/main.png" alt="Project Chrono Interface" class="project-img-asset">
+                </div>
+                <div class="project-meta-layer">
+                    <span class="project-tags">INTELLIGENT INTEGRATION // AUTOMATION NETWORK</span>
+                    <h3 class="project-name">CHRONO LOGIC INTERFACE</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         ABOUT SECTION (STUDIO STRATEGY MATRIX)
+         ========================================== -->
+    <section id="about" class="about-canvas container section-spacer">
+        <div class="section-header-block scroll-reveal">
+            <span class="section-index">03 // </span>
+            <h2 class="section-title">THE DESIGN STUDIO</h2>
+        </div>
+
+        <div class="about-structural-grid">
+            <div class="about-vision-block scroll-reveal">
+                <h3 class="about-subheadline">ENGINEERING INTENTIONALITY</h3>
+                <p class="about-body-paragraph">
+                    NEXYS DIGITAL functions as an elite multi-disciplinary production node. We construct specialized custom web infrastructure and extreme contrast visual branding components for companies requiring modern excellence. 
+                </p>
+            </div>
+            <div class="about-matrix-block scroll-reveal">
+                <div class="matrix-cell">
+                    <h4 class="cell-title">OUR MISSION</h4>
+                    <p class="cell-desc">Strip away bloated frameworks, optimize latency down to the lowest possible metrics, and formulate high-impact corporate asset frameworks.</p>
+                </div>
+                <div class="matrix-cell">
+                    <h4 class="cell-title">OUR VISION</h4>
+                    <p class="cell-desc">Establish absolute dominance at the convergence point where premium fine art interfaces meet raw hardware-level execution logic.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         CONTACT SECTION (STUDIO COMMUNICATIONS DIRECTORY)
+         ========================================== -->
+    <section id="contact" class="contact-canvas container section-spacer">
+        <div class="section-header-block scroll-reveal">
+            <span class="section-index">04 // </span>
+            <h2 class="section-title">INITIATE DEPLOYMENT RUN</h2>
+        </div>
+
+        <div class="contact-terminal-card glass-card scroll-reveal">
+            <div class="terminal-header">
+                <div class="terminal-indicator-dot"></div>
+                <span class="terminal-title-text">NEXYS_COMMUNICATION_PORTAL_v4.0</span>
+            </div>
+            
+            <div class="contact-details-grid">
+                <!-- EDIT DIRECT CONTACT DETAILS LINKS HERE -->
+                <div class="contact-detail-node">
+                    <span class="detail-label">STUDIO ENQUIRIES EMAIL</span>
+                    <a href="mailto:hello@nexys.digital" class="detail-value-link">hello@nexys.digital</a>
+                </div>
+
+                <div class="contact-detail-node">
+                    <span class="detail-label">DIRECT PHONE COMM PORT</span>
+                    <a href="tel:+81355550199" class="detail-value-link">+81 (03) 5555-0199</a>
+                </div>
+
+                <div class="contact-detail-node">
+                    <span class="detail-label">STUDIO COORDINATOR PHYSICAL ADDRESS</span>
+                    <address class="detail-physical-address">TRUCHIRAPPALI</address>
+                </div>
+
+                <div class="contact-detail-node">
+                    <span class="detail-label">EXTERNAL CONNECTIVITY NETWORKS</span>
+                    <div class="social-links-row">
+                        <a href="https://www.instagram.com/nexysdigitalmedia?igsh=ZG1rYnI3cWEyN2Jn" target="_blank" class="social-anchor-tag">INSTAGRAM</a>
+                        <a href="https://linkedin.com/company/nexys-digital" target="_blank" class="social-anchor-tag">LINKEDIN</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="terminal-action-gate">
+                <h3 class="gate-headline">READY TO BUILD?</h3>
+                <p class="gate-subtext">Clicking the deployment link initiates our high-priority engineering onboarding protocol via secure external connection arrays.</p>
+                <!-- GENERAL BUTTON REDIRECT ARRAY LINK -->
+                <a href="https://forms.gle/BoD6sWonpfeW9gXg9" target="_blank" class="btn-anime primary big-terminal-btn">
+                    <span class="btn-text">LAUNCH INTAKE SYSTEM ↗</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         MINIMAL SYSTEM FOOTER
+         ========================================== -->
+    <footer class="sys-footer-layer">
+        <div class="container footer-content-wrapper">
+            <div class="footer-top-row">
+                <div class="footer-brand-signature">
+                    <span class="footer-logo-text">NEXYS<span class="logo-dot">.</span>DIGITAL</span>
+                    <p class="footer-tagline">Premium Architecture Node.</p>
+                </div>
+                <div class="footer-quick-links-directory">
+                    <a href="#home" class="footer-dir-link">TOP</a>
+                    <a href="#services" class="footer-dir-link">SERVICES</a>
+                    <a href="#portfolio" class="footer-dir-link">PORTFOLIO</a>
+                    <a href="#about" class="footer-dir-link">STUDIO</a>
+                    <a href="#contact" class="footer-dir-link">CONNECT</a>
+                </div>
+            </div>
+            <div class="footer-bottom-compliance-row">
+                <span class="copyright-disclaimer">© 2026 NEXYS DIGITAL. ALL RIGHTS RESERVED. TRADEMARK COMPLIANCE MATRIX.</span>
+                <span class="system-metric-stamp">LATENCY: OPTIMIZED // ENV: PRODUCTION</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

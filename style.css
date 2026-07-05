@@ -1,0 +1,826 @@
+/* ==========================================================================
+   THEME CONFIGURATION SCHEMA: MODERN JAPANESE MINIMALISM / EXPENSIVE LUXURY
+   ========================================================================== */
+:root {
+    /* COLOR SCHEME PALETTE MATRIX */
+    --bg-primary: #050505;
+    --bg-secondary: #111111;
+    --card-surface: #171717;
+    --border-color: #2D2D2D;
+    --text-primary: #FFFFFF;
+    --text-secondary: #BEBEBE;
+    --accent-color: #F5F5F5;
+    --hover-color: #FFFFFF;
+    
+    /* TYPOGRAPHY SCHEME DEFINITIONS */
+    --font-stack: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    --font-weight-thin: 300;
+    --font-weight-medium: 500;
+    --font-weight-bold: 700;
+    --font-weight-heavy: 900;
+    
+    /* ANIMATION BEZIER PIPES */
+    --transition-premium: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), 
+                          opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1), 
+                          border-color 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+                          box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+                          background-color 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ==========================================================================
+   GLOBAL RESET BASE ARCHITECTURE
+   ========================================================================== */
+html {
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+    text-size-adjust: 100%;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: var(--font-stack);
+    font-weight: var(--font-weight-thin);
+    overflow-x: hidden;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+.container {
+    width: 100%;
+    max-width: 1360px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+.section-spacer {
+    padding-top: 140px;
+    padding-bottom: 60px;
+}
+
+/* HELPER STYLES FOR LINKS & LISTS */
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+/* ==========================================================================
+   MEDIA BACKDROP ENGINE LAYER
+   ========================================================================== */
+.media-canvas-layer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -5;
+    overflow: hidden;
+    background-color: var(--bg-primary);
+}
+
+/* HIGH END ASSET HANDLING: BACKGROUND VIDEO PRESET */
+.bg-video-asset {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.05; /* Kept extremely dim to feel premium and subtle */
+    filter: grayscale(100%) contrast(120%);
+}
+
+/* TO CHANGE BACKGROUND VIA IMAGE EASILY: Edit this selector element */
+.bg-image-fallback {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Replace background-image path to switch cleanly if background.mp4 is omitted */
+    background-image: none; 
+    background-size: cover;
+    background-position: center;
+    opacity: 0.03;
+    pointer-events: none;
+    filter: grayscale(100%);
+}
+
+.japanese-grain-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    opacity: 0.04;
+    pointer-events: none;
+}
+
+/* ==========================================================================
+   NAVIGATION HOOD SYSTEM
+   ========================================================================== */
+.nx-navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 90px;
+    z-index: 1000;
+    border-bottom: 1px solid var(--border-color);
+    background-color: rgba(5, 5, 5, 0.85);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    transition: var(--transition-premium);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+
+.logo-text {
+    font-family: var(--font-stack);
+    font-weight: var(--font-weight-heavy);
+    font-size: 1.25rem;
+    letter-spacing: -0.04em;
+    color: var(--text-primary);
+}
+
+.logo-dot {
+    color: var(--text-secondary);
+}
+
+.nav-links-list {
+    display: flex;
+    gap: 40px;
+}
+
+.nav-item {
+    font-family: var(--font-stack);
+    font-weight: var(--font-weight-medium);
+    font-size: 0.8rem;
+    letter-spacing: 0.15em;
+    color: var(--text-secondary);
+    transition: var(--transition-premium);
+    padding: 8px 0;
+    position: relative;
+}
+
+.nav-item:hover, .nav-item.active {
+    color: var(--text-primary);
+}
+
+.nav-item::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 1px;
+    background-color: var(--text-primary);
+    transition: var(--transition-premium);
+    transform: translateX(-50%);
+}
+
+.nav-item:hover::after, .nav-item.active::after {
+    width: 100%;
+}
+
+.nav-actions-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+/* ==========================================================================
+   ANIME-INSPIRED BUTTON INFRASTRUCTURE
+   ========================================================================== */
+.btn-anime {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 32px;
+    border-radius: 40px;
+    font-family: var(--font-stack);
+    font-weight: var(--font-weight-medium);
+    font-size: 0.82rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: var(--transition-premium);
+}
+
+.btn-anime.primary {
+    background-color: var(--accent-color);
+    color: var(--bg-primary);
+    border: 1px solid var(--accent-color);
+    box-shadow: 0 4px 14px rgba(255, 255, 255, 0.05);
+}
+
+.btn-anime.secondary {
+    background-color: transparent;
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+}
+
+.btn-anime.premium-nav-btn {
+    padding: 10px 24px;
+    font-size: 0.75rem;
+    background-color: transparent;
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+}
+
+/* ANIMATION SHINE / INTERACTIVE HOVER RIGS */
+.btn-anime::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.4) 50%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    transform: skewX(-25deg);
+    transition: none;
+    pointer-events: none;
+}
+
+.btn-anime:hover {
+    transform: translateY(-4px) scale(1.02);
+}
+
+.btn-anime.primary:hover {
+    background-color: var(--hover-color);
+    box-shadow: 0 8px 24px rgba(255, 255, 255, 0.15), 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+.btn-anime.secondary:hover, .btn-anime.premium-nav-btn:hover {
+    border-color: var(--text-primary);
+    background-color: rgba(255, 255, 255, 0.02);
+    box-shadow: 0 8px 24px rgba(255, 255, 255, 0.02);
+}
+
+.btn-anime:hover::before {
+    left: 150%;
+    transition: left 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ==========================================================================
+   HERO CANVAS SECTION
+   ========================================================================== */
+.hero-canvas {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding-top: 130px;
+    padding-bottom: 60px;
+    position: relative;
+}
+
+.hero-grid-wrapper {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.japanese-meta-tag {
+    font-size: 0.75rem;
+    letter-spacing: 0.3em;
+    color: var(--text-secondary);
+    margin-bottom: 24px;
+    font-weight: var(--font-weight-medium);
+}
+
+.hero-headline {
+    font-family: var(--font-stack);
+    font-weight: var(--font-weight-heavy);
+    font-size: 5.4rem;
+    line-height: 0.95;
+    letter-spacing: -0.04em;
+    text-transform: uppercase;
+    margin-bottom: 32px;
+}
+
+.wireframe-text {
+    color: transparent;
+    -webkit-text-stroke: 1px var(--text-primary);
+}
+
+.hero-description {
+    font-size: 1.1rem;
+    font-weight: var(--font-weight-thin);
+    color: var(--text-secondary);
+    max-width: 520px;
+    margin-bottom: 48px;
+    line-height: 1.7;
+}
+
+.hero-button-group {
+    display: flex;
+    gap: 20px;
+}
+
+/* ARTWORK DISPLAY FRAME OBJECT */
+.illustration-frame-outer {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4/5;
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    padding: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-scaled-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(100%) contrast(105%);
+    transition: var(--transition-premium);
+}
+
+.illustration-frame-outer:hover .hero-scaled-image {
+    filter: grayscale(100%) contrast(115%);
+    transform: scale(1.01);
+}
+
+/* JAPANESE GEOMETRY FRAMING CORNERS */
+.anime-frame-corner {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    border: 2px solid var(--text-primary);
+    pointer-events: none;
+}
+
+.anime-frame-corner.top-left {
+    top: -1px;
+    left: -1px;
+    border-right: none;
+    border-bottom: none;
+}
+
+.anime-frame-corner.bottom-right {
+    bottom: -1px;
+    right: -1px;
+    border-left: none;
+    border-top: none;
+}
+
+.frame-technical-overlay {
+    position: absolute;
+    bottom: -32px;
+    right: 4px;
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    color: var(--text-secondary);
+}
+
+/* ==========================================================================
+   UNIVERSAL SECTION BANNER PARAMS
+   ========================================================================== */
+.section-header-block {
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 24px;
+    margin-bottom: 64px;
+}
+
+.section-index {
+    display: block;
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+    color: var(--text-secondary);
+    margin-bottom: 12px;
+}
+
+.section-title {
+    font-weight: var(--font-weight-heavy);
+    font-size: 2.2rem;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+}
+
+/* ==========================================================================
+   SERVICES CONTAINER INFRASTRUCTURE
+   ========================================================================== */
+.services-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 24px;
+}
+
+.glass-card {
+    background-color: rgba(23, 23, 23, 0.4);
+    border: 1px solid var(--border-color);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-radius: 12px;
+    padding: 48px 36px;
+    transition: var(--transition-premium);
+}
+
+.service-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--text-primary);
+    background-color: rgba(23, 23, 23, 0.8);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+}
+
+.card-numeric {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    margin-bottom: 40px;
+    font-weight: var(--font-weight-medium);
+}
+
+.card-headline {
+    font-weight: var(--font-weight-medium);
+    font-size: 1.4rem;
+    letter-spacing: -0.01em;
+    margin-bottom: 16px;
+}
+
+.card-body-text {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+/* ==========================================================================
+   PORTFOLIO STACK INFRASTRUCTURE
+   ========================================================================== */
+.portfolio-showcase-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+}
+
+.portfolio-item {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.project-media-wrapper {
+    width: 100%;
+    aspect-ratio: 16/9;
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    overflow: hidden;
+    position: relative;
+}
+
+.project-img-asset {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(100%) contrast(100%);
+    transition: var(--transition-premium);
+}
+
+.portfolio-item:hover .project-img-asset {
+    transform: scale(1.02);
+    filter: grayscale(100%) contrast(110%);
+}
+
+.project-meta-layer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 20px;
+    transition: var(--transition-premium);
+}
+
+.portfolio-item:hover .project-meta-layer {
+    border-color: var(--text-primary);
+}
+
+.project-tags {
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    color: var(--text-secondary);
+}
+
+.project-name {
+    font-weight: var(--font-weight-heavy);
+    font-size: 1.6rem;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+}
+
+/* ==========================================================================
+   ABOUT STRUCTURAL SCHEMATICS
+   ========================================================================== */
+.about-structural-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+}
+
+.about-subheadline {
+    font-weight: var(--font-weight-medium);
+    font-size: 1.5rem;
+    letter-spacing: -0.01em;
+    margin-bottom: 24px;
+}
+
+.about-body-paragraph {
+    font-size: 1.15rem;
+    color: var(--text-secondary);
+    line-height: 1.75;
+}
+
+.about-matrix-block {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.matrix-cell {
+    border-left: 2px solid var(--border-color);
+    padding-left: 24px;
+    transition: var(--transition-premium);
+}
+
+.matrix-cell:hover {
+    border-left-color: var(--text-primary);
+}
+
+.cell-title {
+    font-weight: var(--font-weight-bold);
+    font-size: 1rem;
+    letter-spacing: 0.1em;
+    margin-bottom: 12px;
+}
+
+.cell-desc {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+}
+
+/* ==========================================================================
+   CONTACT CARD SYSTEM
+   ========================================================================== */
+.contact-terminal-card {
+    border-radius: 16px;
+    padding: 64px;
+}
+
+.terminal-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 24px;
+    margin-bottom: 48px;
+}
+
+.terminal-indicator-dot {
+    width: 8px;
+    height: 8px;
+    background-color: var(--text-primary);
+    border-radius: 50%;
+    box-shadow: 0 0 8px var(--text-primary);
+}
+
+.terminal-title-text {
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    color: var(--text-secondary);
+}
+
+.contact-details-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 48px;
+    margin-bottom: 64px;
+}
+
+.contact-detail-node {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.detail-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    color: var(--text-secondary);
+}
+
+.detail-value-link, .detail-physical-address {
+    font-size: 1.4rem;
+    font-weight: var(--font-weight-medium);
+    letter-spacing: -0.02em;
+    font-style: normal;
+    transition: var(--transition-premium);
+}
+
+a.detail-value-link:hover {
+    color: var(--text-primary);
+    transform: translateX(4px);
+}
+
+.social-links-row {
+    display: flex;
+    gap: 24px;
+}
+
+.social-anchor-tag {
+    font-size: 1rem;
+    font-weight: var(--font-weight-medium);
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 4px;
+    transition: var(--transition-premium);
+}
+
+.social-anchor-tag:hover {
+    border-bottom-color: var(--text-primary);
+}
+
+.terminal-action-gate {
+    border-top: 1px solid var(--border-color);
+    padding-top: 48px;
+    text-align: center;
+}
+
+.gate-headline {
+    font-weight: var(--font-weight-heavy);
+    font-size: 2rem;
+    letter-spacing: -0.02em;
+    margin-bottom: 12px;
+}
+
+.gate-subtext {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    max-width: 580px;
+    margin: 0 auto 36px auto;
+}
+
+.big-terminal-btn {
+    padding: 18px 48px;
+    font-size: 0.9rem;
+}
+
+/* ==========================================================================
+   MINIMAL LAYER SYSTEM FOOTER
+   ========================================================================== */
+.sys-footer-layer {
+    background-color: var(--bg-secondary);
+    border-top: 1px solid var(--border-color);
+    padding: 80px 0 40px 0;
+}
+
+.footer-content-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 64px;
+}
+
+.footer-top-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.footer-logo-text {
+    font-weight: var(--font-weight-heavy);
+    font-size: 1.1rem;
+    letter-spacing: -0.04em;
+}
+
+.footer-tagline {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    margin-top: 8px;
+}
+
+.footer-quick-links-directory {
+    display: flex;
+    gap: 32px;
+}
+
+.footer-dir-link {
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    color: var(--text-secondary);
+    transition: var(--transition-premium);
+}
+
+.footer-dir-link:hover {
+    color: var(--text-primary);
+}
+
+.footer-bottom-compliance-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid var(--border-color);
+    padding-top: 32px;
+    font-size: 0.7rem;
+    letter-spacing: 0.05em;
+    color: var(--text-secondary);
+}
+
+/* ==========================================================================
+   SCROLL INTERACTIVE ANIMATION DRIVER STATES
+   ========================================================================== */
+.scroll-reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), 
+                transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.scroll-reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ==========================================================================
+   CORE RESPONSIVE GRID MEDIA ENGINES
+   ========================================================================== */
+@media (max-width: 1024px) {
+    .hero-headline { font-size: 4rem; }
+    .hero-grid-wrapper { gap: 40px; }
+    .about-structural-grid { grid-template-columns: 1fr; gap: 48px; }
+    .contact-details-grid { grid-template-columns: 1fr; gap: 32px; }
+    .contact-terminal-card { padding: 40px; }
+}
+
+@media (max-width: 768px) {
+    .container { padding: 0 24px; }
+    .nx-navbar { height: 80px; }
+    .hero-grid-wrapper { grid-template-columns: 1fr; gap: 60px; text-align: center; }
+    .hero-description { margin-left: auto; margin-right: auto; }
+    .hero-button-group { justify-content: center; }
+    .illustration-frame-outer { max-width: 480px; margin: 0 auto; }
+    
+    /* INTERACTIVE HAMBURGER MOBILE NAVIGATION PIPES */
+    .mobile-toggle-trigger {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 24px;
+        height: 16px;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        z-index: 1100;
+    }
+    .mobile-toggle-trigger .bar {
+        width: 100%;
+        height: 1px;
+        background-color: var(--text-primary);
+        transition: var(--transition-premium);
+    }
+    .mobile-toggle-trigger.open .bar:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .mobile-toggle-trigger.open .bar:nth-child(2) { transform: translateY(-8px) rotate(-45deg); }
+    
+    .nav-menu-wrapper {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 100vw;
+        height: 100vh;
+        background-color: var(--bg-primary);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: var(--transition-premium);
+        z-index: 1050;
+    }
+    .nav-menu-wrapper.open { right: 0; }
+    .nav-links-list { flex-direction: column; align-items: center; gap: 32px; }
+    .nav-item { font-size: 1.2rem; }
+    .premium-nav-btn { display: none; }
+    .project-name { font-size: 1.3rem; }
+    .project-meta-layer { flex-direction: column; align-items: flex-start; gap: 8px; }
+    .footer-top-row { flex-direction: column; gap: 32px; }
+    .footer-bottom-compliance-row { flex-direction: column; gap: 16px; text-align: center; }
+}
+
+@media (min-width: 769px) {
+    .mobile-toggle-trigger { display: none; }
+}
